@@ -30,6 +30,7 @@ const habitacionSchema = new Schema ({
         type :Number,
         require : true,
     },
+    
     fotos :{
         type : [{ type: String }], // Arreglo dinámico para agregar las imagenes de las habitaciones
         require : true

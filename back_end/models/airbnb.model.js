@@ -36,9 +36,9 @@ const habitacionSchema = new Schema ({
         require : true
     }
 
-
-
 })
+
+export default mongoose.model("AirbnbClone", habitacionSchema)
 
 /* - nombre de la habitación
 - capacidad (cantidad de personas por habitación)

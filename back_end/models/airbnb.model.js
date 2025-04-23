@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const habitacionSchema = new Schema ({
     nombre:{
-        type:String,
+        type:Number,
         require: true,
         unique: true,
     },

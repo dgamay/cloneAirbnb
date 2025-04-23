@@ -1,7 +1,7 @@
 import express from "express"; // Importa la librería Express para crear y gestionar el servidor y las rutas
 import dotenv from"dotenv"; // Importa la librería dotenv para cargar variables de entorno desde un archivo .env
 import mongoose from "mongoose"; // Importa la librería Mongoose para interactuar con la base de datos MongoDB
-
+import habitacionRoutes from "./back_end/routes/airbnb.routes.js"
 
 dotenv.config(); // Carga las variables de entorno desde el archivo .env
 const app=express(); // Crea una instancia de la aplicación Express
@@ -9,7 +9,7 @@ const PORT =(process.env.PORT|| 3000); // Define el puerto del servidor, utiliza
 
 app.set("port",PORT); // Establece el puerto que la aplicación Express utilizará
 app.use(express.json()); // Habilita el middleware para analizar cuerpos de solicitud JSON
-app.use("/api/pokemon",pokemonRoutes); // Monta las rutas relacionadas con Pokémon bajo el prefijo "/api/pokemon"
+app.use("/habitacion",habitacionRoutes); // Monta las rutas relacionadas con Pokémon bajo el prefijo "/api/pokemon"
 
 // Ruta de ejemplo para la raíz del servidor
 app.get("/",(req,res)=> {

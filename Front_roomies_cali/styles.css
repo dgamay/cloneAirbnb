@@ -1,0 +1,146 @@
+/* styles.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #fff;
+  }
+  
+  .hero {
+    background-color: #D4E9E2; /* gris placeholder para imagen */
+    color: #fff;
+    text-align: center;
+    padding: 6rem 1rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .btn {
+    background-color: #28A89C;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 8px;
+    display: inline-block;
+    font-weight: 600;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .about, .services, .reviews, .contact {
+    padding: 2rem 1rem;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .rooms {
+    padding: 2rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .room-card {
+    background-color: #F0F0F0;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .image-placeholder {
+    background-color: #ccc;
+    height: 200px;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+  }
+  
+  .cta-button {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  .gallery {
+    padding: 2rem 1rem;
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .gallery .image-placeholder {
+    height: 300px;
+  }
+  
+  .contact form {
+    display: grid;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 2rem auto;
+    text-align: left;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+  
+  button[type="submit"] {
+    background-color: #28A89C;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+    background-color: #f8f8f8;
+    color: #666;
+  }
+  
+  @media (min-width: 768px) {
+    .rooms {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .hero h1 {
+      font-size: 3rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+    }
+    .rooms {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  

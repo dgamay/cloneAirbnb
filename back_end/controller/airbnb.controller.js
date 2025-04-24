@@ -10,6 +10,21 @@ import Usuario from "../models/user.model.js";
             res.status (500).json({error: error.message})            
         }
     };
+    
+    const crearHabitacion = async (req, res) => {
+        try {
+            const nuevaHabitacion = new Habitacion(req.body); // Crea una nueva habitación con los datos recibidos
+            await nuevaHabitacion.save(); // Guarda la habitación en la base de datos
+    
+            res.status(201).json({
+                message: "Habitación creada exitosamente",
+                habitacion: nuevaHabitacion,
+            });
+        } catch (error) {
+            res.status(500).json({ error: error.message }); // Maneja errores y envía respuesta
+        }
+    };
+    
 
     const mostrarUsuarios =async (req,res )=>{
         try {
@@ -83,6 +98,7 @@ import Usuario from "../models/user.model.js";
 
     export default{
         mostrarHabitaciones,
+        crearHabitacion,
         mostrarUsuarios,
         mostrarUsuarioPorId,
         agregarUsuario,

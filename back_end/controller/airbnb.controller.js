@@ -24,7 +24,49 @@ import Usuario from "../models/user.model.js";
             res.status(500).json({ error: error.message }); // Maneja errores y envía respuesta
         }
     };
-    
+
+    const mostrarHabitcionPorId = async (req, res) => {
+        try {
+            const habitacion = await Habitacion.findById(req.params.id); // Busca habitacion por ID
+            if (!habitacion) {
+                return res.status(404).json({ message: "Usuario no encontrado" });
+            }
+            res.status(200).json(habitacion);
+        } catch (error) {
+            res.status(500).json({ error: error.message });
+        }
+    };
+
+    const actualizarHabitacion = async (req, res) => {
+        try {
+            const habitacionActualizado = await Habitacion.findByIdAndUpdate(
+                req.params.id, // ID del usuario que se actualizará
+                req.body, // Nuevos datos para el usuario
+                { new: true } // Devuelve el documento actualizado
+            );
+            if (!habitacionActualizado) {
+                return res.status(404).json({ message: "Usuario no encontrado" });
+            }
+            res.status(200).json({
+                message: "Usuario actualizado exitosamente",
+                habitacion: habitaciActualizado,
+            });
+        } catch (error) {
+            res.status(500).json({ error: error.message });
+        }
+    };
+
+    const eliminarHabitacion = async (req, res) => {
+        try {
+            const habitcionEliminada = await Habitacion.findByIdAndDelete(req.params.id); // Elimina por ID
+            if (!habitcionEliminada) {
+                return res.status(404).json({ message: "Habitacio no encontrado" });
+            }
+            res.status(200).json({ message: "Habitacio eliminado exitosamente" });
+        } catch (error) {
+            res.status(500).json({ error: error.message });
+        }
+    };    
 
     const mostrarUsuarios =async (req,res )=>{
         try {
@@ -98,7 +140,10 @@ import Usuario from "../models/user.model.js";
 
     export default{
         mostrarHabitaciones,
+        mostrarHabitcionPorId,
         crearHabitacion,
+        actualizarHabitacion,
+        eliminarHabitacion,
         mostrarUsuarios,
         mostrarUsuarioPorId,
         agregarUsuario,

@@ -4,8 +4,12 @@ import airbnbController from "../controller/airbnb.controller.js";
 
 const router = express.Router();
 
-router.get("/habitaciones", airbnbController.mostrarHabitaciones);
-router.post("/habitaciones", airbnbController.crearHabitacion); // Crear usuario
+router.post  ("/habitaciones", airbnbController.crearHabitacion); // Crear usuario
+router.get   ("/habitaciones", airbnbController.mostrarHabitaciones);
+router.get   ("/habitaciones/:id", airbnbController.mostrarHabitcionPorId); // Leer habitacion por ID
+router.put   ("/habitaciones/:id", airbnbController.actualizarHabitacion);
+router.delete("/habitaciones/:id",airbnbController.eliminarHabitacion);
+
 
 /* Rutas usuarios */
 router.post("/usuarios", airbnbController.agregarUsuario); // Crear usuario

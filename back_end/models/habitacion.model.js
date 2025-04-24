@@ -36,7 +36,7 @@ const habitacionSchema = new Schema ({
         require : true
     }
 
-})
+});
 
 export default mongoose.model("Habitacione", habitacionSchema)
 

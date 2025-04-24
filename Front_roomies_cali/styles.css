@@ -19,7 +19,7 @@ body {
     text-align: center;
     padding: 6rem 1rem;
     height: 80vh;
-    background-image: url(/cloneAirbnb/Front_roomies_cali/assets/images/home_header.jpg);
+    background-image: url(./assets/images/home_header.jpg);
     background-size: cover;
   }
   
@@ -101,7 +101,7 @@ body {
     background-color: #28A89C;
     flex-shrink: 0;
     border-radius: 12px;
-    background-image: url(/cloneAirbnb/Front_roomies_cali/assets/images/visuel_article_blog_FH-2.png);
+    background-image: url(./assets/images/visuel_article_blog_FH-2.png);
   }
   
 

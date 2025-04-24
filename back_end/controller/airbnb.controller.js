@@ -15,6 +15,11 @@ import Usuario from "../models/user.model.js";
         try {
                 const usuarios = await Usuario.find(); // Busca todos los usuarios en la base de datos
                 res.status(200).json(usuarios);
+                usuarios.forEach(usuario => {
+                    console.log(usuario.nombre,usuario.correo); // Imprime el nombre de cada usuario
+                });
+        
+                
             } catch (error) {
                 res.status(500).json({ error: error.message });
             }

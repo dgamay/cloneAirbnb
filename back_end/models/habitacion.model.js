@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const habitacionSchema = new Schema ({
-    nombre:{
+    numero:{
         type:Number,
         require: true,
         unique: true,
@@ -38,7 +38,7 @@ const habitacionSchema = new Schema ({
 
 })
 
-export default mongoose.model("AirbnbClone", habitacionSchema)
+export default mongoose.model("Habitacione", habitacionSchema)
 
 /* - nombre de la habitación
 - capacidad (cantidad de personas por habitación)

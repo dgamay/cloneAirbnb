@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Habitaciones</title>
+  <link rel="stylesheet" href="./habitacionesStyles.css" />
+</head>
+<body>
+  <main>
+    <!-- 🔍 Búsqueda -->
+    <section id="roomSearch" class="search-section">
+      <input type="text" id="searchBar" placeholder="Buscar habitación..." />
+      <button id="searchButton">Buscar</button>
+    </section>
+
+    <!-- 📋 Lista de habitaciones -->
+    <section id="roomList" class="room-list"></section>
+
+    <!-- 📝 Detalle de habitación -->
+    <section id="roomDetail" class="room-detail" style="display: none;">
+      <button id="btnBack">Volver al listado</button>
+      <div id="roomInfo" class="detail-container"></div>
+    </section>
+
+    <!-- 🔎 Resultado de búsqueda -->
+    <section id="roomSearch1" class="room-search-result" style="display: none;">
+      <button id="btnBack1">Volver al listado</button>
+      <div id="roomSearchInfo" class="search-container"></div>
+    </section>
+  </main>
+  <script src="./habitacionesMain.js"></script>
+</body>
+</html>

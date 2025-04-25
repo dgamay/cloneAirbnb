@@ -63,3 +63,11 @@ document.addEventListener("DOMContentLoaded", () => {
   prevBtn.addEventListener("click", showPrevImage);
   nextBtn.addEventListener("click", showNextImage);
 });
+
+// Cerrar lightbox al hacer clic fuera de la imagen
+lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+      closeLightbox();
+    }
+  });
+  

@@ -43,7 +43,7 @@ body {
     border-radius: 8px;
     display: inline-block;
     font-weight: 600;
-    width: 10%;
+    width: fit-content;
   
   }
 
@@ -292,14 +292,26 @@ body {
 /*---------------- CONTACT ----------------*/
 
 .contact-section {
-  background-color: #4B9EFF;
+  
   padding: 4rem 2rem;
   text-align: center;
+  background-image: url(./assets/images/studying-residence.jpg);
+  background-size: cover;
+  position: relative;
+}
+
+.contact-section::before{
+  background-color: #4B9EFF;  
+  position: absolute;
+  content: "";
+  inset: 0;
+  opacity: 80%;
 }
 
 .contact-wrapper {
   max-width: 900px;
   margin: auto;
+  position: relative;
 }
 
 .contact-form {
@@ -379,16 +391,20 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
+  
     background-color: rgba(0,0,0,0.85);
-    justify-content: center;
-    align-items: center;
+
   }
   
   .lightbox-content {
-    max-width: 90%;
-    max-height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 90vw;
+    max-height: 80vh;
+    transform: translate(-50%, -50%);
     border-radius: 12px;
+    object-fit: contain;
   }
   
   .lightbox-close {
@@ -401,3 +417,66 @@ body {
     cursor: pointer;
   }
 
+
+
+/* Contenedor del lightbox ya usa flex para centrar la imagen */
+.lightbox.active {
+  display: block;
+}
+
+/* Botones prev/next */
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  z-index: 10000;
+  user-select: none;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.lightbox-prev {
+  left: 1rem;
+}
+
+.lightbox-next {
+  right: 1rem;
+}
+
+/* Zoom en botones al pasar el mouse */
+.btn,
+.btn_h,
+.lightbox-prev,
+.lightbox-next,
+.contact-form button[type="submit"] {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover,
+.btn_h:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover,
+.contact-form button[type="submit"]:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Efecto de "tap" (clic) para todos los botones */
+.btn:active,
+.btn_h:active,
+.lightbox-prev:active,
+.lightbox-next:active,
+.contact-form button[type="submit"]:active {
+  transform: scale(0.97);
+}

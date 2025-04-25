@@ -66,15 +66,75 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Cerrar lightbox al hacer clic fuera de la imagen
 lightbox.addEventListener("click", (e) => {
-    if (e.target === lightbox) {
-      closeLightbox();
+  if (e.target === lightbox) {
+    closeLightbox();
+  }
+});
+
+// ############################# FUNCIONES PARA HABITACIONES #############################
+
+// Función para obtener las habitaciones desde el backend
+const obtenerHabitaciones = async () => {
+  try {
+    const response = await fetch('/api/habitaciones');
+    const habitaciones = await response.json();
+
+    habitaciones.forEach(habitacion => {
+      const divHabitacion = document.createElement('div');
+      divHabitacion.classList.add('habitacion-card');
+      divHabitacion.id = `habitacion-${habitacion._id}`;
+      divHabitacion.innerHTML = `
+        <h3>${habitacion.nombre}</h3>
+        <img src="${habitacion.imagenUrl}" alt="${habitacion.nombre}" class="habitacion-img" />
+        <p>${habitacion.descripcion}</p>
+        <p>Precio: $${habitacion.precio}</p>
+        <p><strong>${habitacion.disponible ? 'Disponible' : 'No Disponible'}</strong></p>
+        <button onclick="actualizarDisponibilidad('${habitacion._id}', ${!habitacion.disponible})">
+          ${habitacion.disponible ? 'Marcar como No Disponible' : 'Marcar como Disponible'}
+        </button>
+      `;
+      document.getElementById('habitaciones-lista').appendChild(divHabitacion); // Asegúrate de que exista un contenedor con este id en tu HTML
+    });
+  } catch (error) {
+    console.error('Error al obtener habitaciones:', error);
+  }
+};
+
+// Llamada de ejemplo para obtener las habitaciones
+document.addEventListener('DOMContentLoaded', obtenerHabitaciones);
+
+// FUNCION PARA ACTUALIZAR DISPONIBILIDAD
+
+// Función para actualizar la disponibilidad de una habitación
+const actualizarDisponibilidad = async (id, disponible) => {
+  try {
+    const response = await fetch(`/api/habitaciones/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ disponible }), // Enviamos el nuevo valor de disponibilidad
+    });
+
+    if (!response.ok) {
+      throw new Error('Error al actualizar la disponibilidad');
     }
-  });
-  
 
+    const data = await response.json();
+    console.log('Disponibilidad actualizada:', data);
 
+    // Actualizar la UI dinámicamente
+    const habitacionElemento = document.getElementById(`habitacion-${id}`);
+    habitacionElemento.querySelector('p strong').textContent = disponible ? 'Disponible' : 'No Disponible';
+    habitacionElemento.querySelector('button').textContent = disponible ? 'Marcar como No Disponible' : 'Marcar como Disponible';
+    
+  } catch (error) {
+    console.error('Error al actualizar disponibilidad:', error);
+  }
+};
 
-  
+// ######################### FUNCIONES EXISTENTES PARA EL FORMULARIO #########################
+
 // Manejo del envío del formulario de contacto (registro)
 if (registroForm) {
   registroForm.addEventListener('submit', function(event) {

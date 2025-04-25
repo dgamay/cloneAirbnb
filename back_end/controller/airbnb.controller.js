@@ -2,13 +2,16 @@ import Habitacion from "../models/habitacion.model.js";
 import Usuario from "../models/user.model.js";
 import fs from 'fs';
 import path from 'path';
-import app from "../../index.js"; // Ajusta la ruta según la ubicación del archivo index.js
-import express from 'express'
+import { fileURLToPath } from 'url';
+// Definir __dirname en un entorno ESModule
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 
 
 const listarImagenes= (req, res) => {
-    const directoryPath = path.join(__dirname, 'uploads'); // Ruta absoluta de la carpeta
+    const directoryPath = path.join(__dirname, '..', 'uploads'); // Ruta absoluta de la carpeta
+    console.log(directoryPath);
     fs.readdir(directoryPath, (err, files) => {
         if (err) {
             return res.status(500).json({ error: 'No se pudieron listar las imágenes' });

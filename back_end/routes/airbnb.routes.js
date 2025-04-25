@@ -1,8 +1,9 @@
 import express from "express";
-
 import airbnbController from "../controller/airbnb.controller.js";
 
 const router = express.Router();
+
+router.get   ("/imagenes", airbnbController.listarImagenes);
 
 router.post  ("/habitaciones", airbnbController.crearHabitacion); // Crear usuario
 router.get   ("/habitaciones", airbnbController.mostrarHabitaciones);

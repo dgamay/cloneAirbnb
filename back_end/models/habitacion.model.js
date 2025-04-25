@@ -27,8 +27,7 @@ const habitacionSchema = new mongoose.Schema({
   imagen: { 
     type: String, 
     required: false 
-  }, 
-  // Otros campos que puedas necesitar, como la ubicación, capacidad, etc.
+  }
 });
 
 // Crear el modelo de la habitación basado en el esquema

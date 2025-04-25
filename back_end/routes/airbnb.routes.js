@@ -7,7 +7,8 @@ const router = express.Router();
 // Rutas para las habitaciones
 router.get('/habitaciones', habitacionController.mostrarHabitaciones);
 router.get('/habitaciones/:id', habitacionController.mostrarHabitacionPorId);
-router.put('/habitaciones/:id', habitacionController.actualizarDisponibilidad);
+router.put('/habitaciones/:id', habitacionController.actualizarDisponibilidad); // Ruta para actualizar la disponibilidad
+
 
 // Rutas para los usuarios
 router.get('/usuarios', usuarioController.mostrarUsuarios);

@@ -128,5 +128,22 @@ searchButton.addEventListener("click", async () => {
   showRoomSearchResult(habitacion);
 });
 
+// Función para actualizar la disponibilidad de una habitación
+const actualizarDisponibilidad = async (id, disponible) => {
+  try {
+    const response = await fetch(`/api/habitaciones/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ disponible }), // El nuevo estado de disponibilidad
+    });
+    const data = await response.json();
+    console.log(data); // Ver la respuesta del backend
+  } catch (error) {
+    console.error('Error al actualizar disponibilidad:', error);
+  }
+};
+
 // 🚀 Inicia todo
 loadRoom();

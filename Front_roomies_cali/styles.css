@@ -1,0 +1,482 @@
+/* styles.css */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-color: #F5F7FA;
+}
+
+.hero {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #D4E9E2; /* gris placeholder para imagen */
+  color: #eaeaea;
+  text-align: center;
+  padding: 6rem 1rem;
+  height: 80vh;
+  background-image: url(./assets/images/home_header.jpg);
+  background-size: cover;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.btn_h {
+  background-color: #fa8c89;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 8px;
+  display: inline-block;
+  font-weight: 600;
+  width: fit-content;
+
+}
+
+.btn {
+  background-color: #fa8c89;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 8px;
+  display: inline-block;
+  font-weight: 600;
+  width: 20%;
+}
+.about {
+  padding: 2rem 1rem;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;    
+}
+
+.about_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 50px auto 0 auto; /* <- Centramos el contenedor */
+  gap: 2rem;
+  flex-wrap: wrap; /* Mejora el responsive en pantallas pequeñas */
+}
+
+.about_text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 60%;
+  min-width: 280px;
+  text-align: left;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.p_about {
+  margin: 0;
+  color: #444;
+  line-height: 1.6;
+}
+
+.image-placeholder1 {
+  height: 300px;
+  width: 300px;
+  background-color: #28A89C;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background-image: url(./assets/images/visuel_article_blog_FH-2.png);
+}
+
+
+.section-title {
+  font-size: 2rem;
+  text-align: left;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  width: 70%;
+  
+}
+
+.about, .services, .reviews, .contact {
+  padding: 2rem 1rem;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;    
+}
+
+.rooms {
+  padding: 2rem 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+.rooms_intro {
+  text-align: center;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.p_rooms {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.room-card {
+  background-color:#9EF8CB;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.image-placeholder {
+  background-color: #ccc;
+  height: 200px;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+}
+
+.cta-button {
+  text-align: center;
+  margin-top: 1rem;
+  width: auto;
+  
+}
+
+.btn {
+  background-color: #fa8c89;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 8px;
+  display: inline-block;
+  font-weight: 600;
+  width: 60%;
+}
+.services-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+gap: 2rem;
+margin-top: 2rem;
+justify-items: center;
+margin-bottom: 50px;
+}
+
+.service-item {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+}
+
+.service-icon {
+width: 60px;
+height: 60px;
+margin-bottom: 1rem;
+}
+
+.service-item h3 {
+font-size: 1rem;
+color: #333;
+margin: 0;
+}
+
+/* ----- GALLERY -----*/
+
+.gallery {
+background-color: #9EF8CB;
+padding: 4rem 2rem;
+text-align: center;
+}
+
+.section-title {
+font-size: 2rem;
+text-align: center;
+margin-top: 1rem;
+margin-bottom: 3rem;
+width: 100%;
+}
+
+.gallery-description {
+max-width: 800px;
+margin: 0 auto 2rem auto;
+text-align: center;
+font-size: 1.1rem;
+color: #555;
+}
+
+.gallery-grid {
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+grid-auto-rows: 200px;
+gap: 1rem;
+margin-top: 2rem;
+}
+
+.gallery-grid img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+border-radius: 8px;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.reviews {
+background-color: #fff;
+padding: 4rem 2rem;
+text-align: center;
+}
+
+.reviews-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+gap: 2rem;
+max-width: 1200px;
+margin: 2rem auto 0;
+}
+
+.review-card {
+background-color: #f9f9f9;
+padding: 1.5rem;
+border-radius: 12px;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.review-card img {
+width: 80px;
+height: 80px;
+border-radius: 50%;
+object-fit: cover;
+margin-bottom: 1rem;
+}
+
+.review-card h3 {
+font-size: 1.1rem;
+color: #28A89C;
+margin-bottom: 0.5rem;
+}
+
+.review-card p {
+font-size: 0.95rem;
+color: #444;
+line-height: 1.4;
+}
+
+/*---------------- CONTACT ----------------*/
+
+.contact-section {
+
+padding: 4rem 2rem;
+text-align: center;
+background-image: url(./assets/images/studying-residence.jpg);
+background-size: cover;
+position: relative;
+}
+
+.contact-section::before{
+background-color: #4B9EFF;  
+position: absolute;
+content: "";
+inset: 0;
+opacity: 80%;
+}
+
+.contact-wrapper {
+max-width: 900px;
+margin: auto;
+position: relative;
+}
+
+.contact-form {
+background-color: #f2f2f2;
+padding: 2rem;
+border-radius: 12px;
+max-width: 600px;
+margin: 2rem auto;
+display: flex;
+gap: 1rem;
+text-align: left;
+flex-direction: column;
+align-items: center;
+}
+
+.contact-form input,
+.contact-form textarea {
+width: 100%;
+padding: 0.75rem;
+border: 1px solid #ccc;
+border-radius: 6px;
+font-size: 1rem;
+}
+
+.contact-form button[type="submit"] {
+background-color: #fa8c89;
+color: white;
+border: none;
+padding: 0.75rem;
+border-radius: 8px;
+cursor: pointer;
+font-weight: 600;
+}
+
+/* -----FOOTER -----*/
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  background-color: #f8f8f8;
+  color: #666;
+}
+
+.footer-logo{
+  max-height: 150px;
+}
+
+/* ------QUERYS------ */
+
+@media (min-width: 768px) {
+  .rooms {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero h1 {
+    font-size: 3rem;
+  }
+  .hero p {
+    font-size: 1.2rem;
+  }
+  .rooms {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* -----lightbox----*/
+
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding: 1rem;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0,0,0,0.85);
+
+}
+
+.lightbox-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: 90vw;
+  max-height: 80vh;
+  transform: translate(-50%, -50%);
+  border-radius: 12px;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+
+/* Contenedor del lightbox ya usa flex para centrar la imagen */
+.lightbox.active {
+display: block;
+}
+
+/* Botones prev/next */
+.lightbox-prev,
+.lightbox-next {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+font-size: 2rem;
+color: white;
+background-color: rgba(0, 0, 0, 0.4);
+border: none;
+padding: 0.5rem 1rem;
+cursor: pointer;
+border-radius: 8px;
+z-index: 10000;
+user-select: none;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+background-color: rgba(0, 0, 0, 0.6);
+}
+
+.lightbox-prev {
+left: 1rem;
+}
+
+.lightbox-next {
+right: 1rem;
+}
+
+/* Zoom en botones al pasar el mouse */
+.btn,
+.btn_h,
+.lightbox-prev,
+.lightbox-next,
+.contact-form button[type="submit"] {
+transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover,
+.btn_h:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover,
+.contact-form button[type="submit"]:hover {
+transform: scale(1.05);
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Efecto de "tap" (clic) para todos los botones */
+.btn:active,
+.btn_h:active,
+.lightbox-prev:active,
+.lightbox-next:active,
+.contact-form button[type="submit"]:active {
+transform: scale(0.97);
+}

@@ -42,6 +42,8 @@ const mostrarHabitaciones = async (req, res) => {
   }
 };
 
+
+
 const crearHabitacion = async (req, res) => {
   try {
     const nuevaHabitacion = new Habitacion(req.body); // Crea una nueva habitación con los datos recibidos

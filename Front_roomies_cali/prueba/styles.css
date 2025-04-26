@@ -1,0 +1,215 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #F5F7FA;
+}
+
+.intro-rooms {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  
+  .intro-rooms h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #222; /* puedes ajustarlo al color principal de Roomies Cali */
+  }
+  
+  .intro-rooms p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+  }
+
+.all{
+    position: relative;
+    top: 45px;
+    left: 10%;
+    display: flex;              /* Activa el modo flex */
+    gap: 50px;                  /* Espacio entre los elementos */
+    justify-content: flex-start;
+}
+
+.all1{
+    position: relative;
+    top: 100px;
+    left: 10%;
+    display: flex;              /* Activa el modo flex */
+    gap: 50px;                  /* Espacio entre los elementos */
+    justify-content: flex-start;
+}
+
+.all2{
+    position: relative;
+    top: 155px;
+    left: 10%;
+    display: flex;              /* Activa el modo flex */
+    gap: 50px;                  /* Espacio entre los elementos */
+    justify-content: flex-start;
+}
+
+.Powers{
+    background: #9EF8CB;
+    width: 15%;
+    height: 260px;
+    position: relative;
+    top: 25%;
+    left: 5%;
+    border: none;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 4px	 4px #94d3b3;
+    cursor: pointer;
+}
+
+.Powers:hover, .Energies:hover, .Calculators:hover, .Tips:hover, .Relations:hover{
+    transform: scale(1.2);
+    box-shadow: 0px 0px 4px	 4px #14534d;
+}
+
+.Power{
+    position: relative;
+    top: 5%;
+    left: 7%;
+    width: 84%;
+    margin: 2%;
+    border: none;
+    border-radius: 20px;
+}
+
+.Energies{
+    background: #9EF8CB;
+    width: 15%;
+    height: 260px;
+    position: relative;
+    top: 25%;
+    left: 5%;
+    border: none;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 4px	 4px #94d3b3;
+    cursor: pointer;
+}
+
+.Energy{
+    position: relative;
+    top: 5%;
+    left: 7%;
+    width: 84%;
+    margin: 2%;
+    border: none;
+    border-radius: 20px;
+}
+
+.Calculators{
+    background: #9EF8CB;
+    width: 15%;
+    height: 260px;
+    position: relative;
+    top: 25%;
+    left: 5%;
+    border: none;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 4px	 4px #94d3b3;
+    cursor: pointer;
+}
+
+.Calculator{
+    position: relative;
+    top: 5%;
+    left: 7%;
+    width: 84%;
+    margin: 2%;
+    border: none;
+    border-radius: 20px;
+}
+
+.Tips{
+    background: #9EF8CB;
+    width: 15%;
+    height: 260px;
+    position: relative;
+    top: 25%;
+    left: 5%;
+    border: none;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 4px	 4px #94d3b3;
+    cursor: pointer;
+}
+
+.Tip{
+    position: relative;
+    top: 5%;
+    left: 7%;
+    width: 84%;
+    margin: 2%;
+    border: none;
+    border-radius: 20px;
+}
+
+.Relations{
+    background: #9EF8CB;
+    width: 15%;
+    height: 260px;
+    position: relative;
+    top: 25%;
+    left: 5%;
+    border: none;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 4px	 4px #94d3b3;
+    cursor: pointer;
+}
+
+.Relation{
+    position: relative;
+    top: 5%;
+    left: 10%;
+    width: 80%;
+    margin: 2%;
+    border: none;
+    border-radius: 20px;
+}
+
+h3{
+    position: relative;
+    left: 5%;
+}
+
+.p1{
+    position: relative;
+    top: -25px;
+    left: 5%;
+}
+
+.p2{
+    position: relative;
+    top: -40px;
+    left: 5%;
+}
+
+footer {
+    position: relative;
+    top: 280px;
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+    background-color: #f8f8f8;
+    color: #666;
+}
+  
+.footer-logo{
+    max-height: 150px;
+}

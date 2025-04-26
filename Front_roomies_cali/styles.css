@@ -235,6 +235,7 @@ grid-template-columns: repeat(5, 1fr);
 grid-auto-rows: 200px;
 gap: 1rem;
 margin-top: 2rem;
+cursor: pointer;
 }
 
 .gallery-grid img {
@@ -260,7 +261,7 @@ margin: 2rem auto 0;
 }
 
 .review-card {
-background-color: #f9f9f9;
+background-color: #e7e7e7;
 padding: 1.5rem;
 border-radius: 12px;
 box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);

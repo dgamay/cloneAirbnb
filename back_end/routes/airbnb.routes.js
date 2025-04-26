@@ -1,18 +1,24 @@
-import express from 'express';
-import habitacionController from '../controller/habitacion.controller.js';
-import usuarioController from '../controller/usuario.controller.js';
+import express from "express";
+import airbnbController from "../controller/airbnb.controller.js";
 
 const router = express.Router();
 
-// Rutas para las habitaciones
-router.get('/habitaciones', habitacionController.mostrarHabitaciones);
-router.get('/habitaciones/:id', habitacionController.mostrarHabitacionPorId);
-router.put('/habitaciones/:id', habitacionController.actualizarDisponibilidad); // Ruta para actualizar la disponibilidad
+router.get   ("/imagenes", airbnbController.listarImagenes);
+
+router.post  ("/habitaciones", airbnbController.crearHabitacion); // Crear usuario
+router.get   ("/habitaciones", airbnbController.mostrarHabitaciones);
+router.get   ("/habitaciones/:id", airbnbController.mostrarHabitcionPorId); // Leer habitacion por ID
+router.put   ("/habitaciones/:id", airbnbController.actualizarHabitacion);
+router.delete("/habitaciones/:id",airbnbController.eliminarHabitacion);
 
 
-// Rutas para los usuarios
-router.get('/usuarios', usuarioController.mostrarUsuarios);
-router.get('/usuarios/:id', usuarioController.mostrarUsuarioPorId);
-router.post('/usuarios', usuarioController.agregarUsuario);
+/* Rutas usuarios */
+router.post("/usuarios", airbnbController.agregarUsuario); // Crear usuario
+router.get("/usuarios", airbnbController.mostrarUsuarios); // Leer usuarios
+router.get("/usuarios/:id", airbnbController.mostrarUsuarioPorId); // Leer usuario por ID
+router.put("/usuarios/:id", airbnbController.actualizarUsuario); // Actualizar usuario
+router.delete("/usuarios/:id", airbnbController.eliminarUsuario); // Eliminar usuario
 
 export default router;
+/* PORT =3005
+MONGO_URI = mongodb+srv://dgm:1234@cluster0.xrrk5lg.mongodb.net/airbnb */

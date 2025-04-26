@@ -1,4 +1,25 @@
 import Habitacion from "../models/habitacion.model.js";
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+// Definir __dirname en un entorno ESModule
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+
+
+const listarImagenes= (req, res) => {
+    const directoryPath = path.join(__dirname, '..', 'uploads'); // Ruta absoluta de la carpeta
+    console.log(directoryPath);
+    fs.readdir(directoryPath, (err, files) => {
+        if (err) {
+            return res.status(500).json({ error: 'No se pudieron listar las imágenes' });
+        }
+        // Filtrar solo los archivos que son imágenes (opcional)
+        const imageFiles = files.filter(file => /\.(jpg|jpeg|png|gif)$/i.test(file));
+        res.status(200).json({ images: imageFiles });
+    });
+};
 
 // Mostrar todas las habitaciones disponibles
 const mostrarHabitaciones = async (req, res) => {
@@ -55,6 +76,7 @@ const actualizarDisponibilidad = async (req, res) => {
 };
 
 export default {
+  listarImagenes,
   mostrarHabitaciones,
   mostrarHabitacionPorId,
   actualizarDisponibilidad, // Asegúrate de exportarlo

@@ -12,7 +12,7 @@ const btnBack1 = document.getElementById("btnBack1");
 // 🔁 Obtener todas las habitaciones
 async function getRoomData() {
   try {
-    const res = await fetch("http://localhost:3005/api/habitaciones");
+    const res = await fetch("http://localhost:3005/api/habitaciones"); // Asegúrate que usas /api si lo montaste así
     const habitaciones = await res.json();
     return habitaciones;
   } catch (error) {
@@ -62,7 +62,11 @@ function showRoomDetail(habitacion) {
     <p><strong>Tipo:</strong> ${habitacion.tipo}</p>
     <p><strong>Precio:</strong> $${habitacion.precio}</p>
     <p><strong>Descripción:</strong> ${habitacion.descripcion}</p>
-    <p><strong>Disponible:</strong> ${habitacion.disponible ? "Sí" : "No"}</p>
+    <p><strong>Disponible:</strong> ${habitacion.disponible ? "Sí" : "No"}
+      <button onclick="actualizarDisponibilidad('${habitacion._id}', ${!habitacion.disponible})">
+        Cambiar
+      </button>
+    </p>
   `;
 }
 
@@ -128,22 +132,25 @@ searchButton.addEventListener("click", async () => {
   showRoomSearchResult(habitacion);
 });
 
-// Función para actualizar la disponibilidad de una habitación
-const actualizarDisponibilidad = async (id, disponible) => {
+// 🛠️ Función para actualizar disponibilidad
+async function actualizarDisponibilidad(id, disponible) {
   try {
-    const response = await fetch(`/api/habitaciones/${id}`, {
-      method: 'PUT',
+    const response = await fetch(`http://localhost:3005/api/habitaciones/${id}`, {
+      method: "PUT",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify({ disponible }), // El nuevo estado de disponibilidad
+      body: JSON.stringify({ disponible }),
     });
+
     const data = await response.json();
-    console.log(data); // Ver la respuesta del backend
+    console.log("Disponibilidad actualizada:", data);
+    loadRoom(); // Refresca el listado
+    alert("Disponibilidad actualizada correctamente");
   } catch (error) {
-    console.error('Error al actualizar disponibilidad:', error);
+    console.error("Error al actualizar disponibilidad:", error);
   }
-};
+}
 
 // 🚀 Inicia todo
 loadRoom();

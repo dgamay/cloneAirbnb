@@ -1,36 +1,49 @@
 import mongoose from "mongoose";
 
-// Definir el esquema para las habitaciones
-const habitacionSchema = new mongoose.Schema({
-  nombre: { 
-    type: String, 
-    required: true, 
-    trim: true  // Elimina espacios al inicio y final del string
-  },
-  tipo: { 
-    type: String, 
-    enum: ['deluxe', 'compartida'], // Solo se permiten estos valores
-    required: true 
-  },
-  precio: { 
-    type: Number, 
-    required: true 
-  },
-  disponible: { 
-    type: Boolean, 
-    default: true // Por defecto, las habitaciones están disponibles
-  },
-  descripcion: { 
-    type: String, 
-    required: false 
-  },
-  imagen: { 
-    type: String, 
-    required: false 
-  }
+const Schema = mongoose.Schema;
+
+const habitacionSchema = new Schema ({
+    numero:{
+        type:Number,
+        require: true,
+        unique: true,
+    },
+
+    capacidad: {
+        type:Number,
+        enum:[1, 2, 4],
+        require: true,
+    },
+
+    baño:{
+        type:String,
+        enum: ['privado','compartido'],
+        require: true,
+    },
+    servicios:{
+        type    :String,
+        enum    :['desayuno', 'internet','tv','lavanderia','ninguno'],
+        require :true,
+    },
+
+    precio :{
+        type :Number,
+        require : true,
+    },
+    
+    fotos :{
+        type : [{ type: String }], // Arreglo dinámico para agregar las imagenes de las habitaciones
+        require : true
+    }
+
 });
 
-// Crear el modelo de la habitación basado en el esquema
-const Habitacion = mongoose.model("Habitacion", habitacionSchema);
+export default mongoose.model("Habitacione", habitacionSchema)
 
-export default Habitacion;
+/* - nombre de la habitación
+- capacidad (cantidad de personas por habitación)
+- baño (privado o compartido)
+- servicios incluidos (desayuno, internet, tv, lavandería)
+- precio
+- foto principal
+- fotos auxiliares */

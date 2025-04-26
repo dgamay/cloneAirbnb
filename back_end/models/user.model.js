@@ -1,44 +1,30 @@
 import mongoose from "mongoose";
 
-// Definir el esquema para los usuarios
-const usuarioSchema = new mongoose.Schema({
-  nombre: { 
-    type: String, 
-    required: true, 
-    trim: true  // Elimina espacios al inicio y final del string
-  },
-  email: { 
-    type: String, 
-    required: true, 
-    unique: true, // No puede haber dos usuarios con el mismo email
-    trim: true
-  },
-  telefono: { 
-    type: String, 
-    required: true, 
-    validate: {
-      validator: function(v) {
-        return /\d{10}/.test(v); // Validar que el teléfono tenga 10 dígitos numéricos
-      },
-      message: props => `${props.value} no es un número de teléfono válido!`
+const Schema = mongoose.Schema;
+
+const usuarioSchema = new Schema({
+    
+    nombre: {
+        type: String,
+        required: true,
+    },
+
+    correo: {
+        type: String,
+        required: true,
+        unique: true,
+        match: [/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/, 'Por favor ingrese un correo válido'],
+    },
+
+    telefono: {
+        type: Number,
+        required: true,
+    },
+
+    comentario: {
+        type: String,
+        required: true,
     }
-  },
-  habitacion_interes: { 
-    type: String, 
-    enum: ['deluxe', 'compartida'], 
-    required: true 
-  },
-  mensaje: { 
-    type: String, 
-    required: false 
-  },
-  fechaRegistro: { 
-    type: Date, 
-    default: Date.now 
-  }
 });
 
-// Crear el modelo del usuario basado en el esquema
-const Usuario = mongoose.model("Usuario", usuarioSchema);
-
-export default Usuario;
+export default mongoose.model("Usuario", usuarioSchema);

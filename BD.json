@@ -1,0 +1,308 @@
+{
+  "modelName": "New Model",
+  "collections": [
+    {
+      "collectionName": "Usuario",
+      "type": "object",
+      "properties": [
+        {
+          "name": "nombre",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "e253b708-b9ea-4d5b-bf4e-87f3f60eb5f0",
+          "error": {}
+        },
+        {
+          "name": "email",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "6ec9bb03-bbe5-456b-b051-dd4eb90231d3",
+          "error": {}
+        },
+        {
+          "name": "telefono",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "numeric",
+          "error": {},
+          "GUID": "29cbaed5-0eb0-47bf-81cf-3bc77e1ddd7d"
+        },
+        {
+          "name": "habitacion_interes",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "9b3cdc7e-a318-4995-89c3-bbdcd376ff76",
+          "error": {
+            "enum": false,
+            "enums": [
+              false,
+              false
+            ]
+          },
+          "enum": [
+            "deluxe",
+            "compartida"
+          ]
+        },
+        {
+          "name": "mensaje",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "00d20843-e15c-4fe3-876e-34d01f8efb5b",
+          "error": {}
+        },
+        {
+          "name": "fechaRegistro",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "date",
+          "primaryKey": false,
+          "error": {},
+          "GUID": "281983f8-0fb5-4293-b5ca-68db498722a7"
+        }
+      ],
+      "definitions": {
+        "type": "definitions",
+        "properties": [],
+        "GUID": "012e446d-94a7-4149-a968-909674661c9c"
+      },
+      "isActivated": true,
+      "additionalProperties": false,
+      "validationLevel": "Off",
+      "validationAction": "Warn",
+      "storageEngineName": "WiredTiger",
+      "collectionUsers": [],
+      "indexes": [],
+      "collation": {},
+      "sharding": {
+        "unique": true,
+        "collation": "null"
+      },
+      "GUID": "1bd41ad3-489c-48d9-a813-479c178b2966",
+      "bucketId": "da97f547-85e9-48a7-8a38-7e0e50de8b7e"
+    },
+    {
+      "collectionName": "Habitacion",
+      "type": "object",
+      "properties": [
+        {
+          "name": "nombre",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "b1724170-ba8d-4047-9e63-4d75c389eede",
+          "error": {}
+        },
+        {
+          "name": "tipo",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "fa3e33f4-d1a5-466d-b653-bda7966d58ce",
+          "error": {}
+        },
+        {
+          "name": "precio",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "numeric",
+          "error": {},
+          "GUID": "c7d024f3-490a-4e3a-b9e2-51ae82a0d828"
+        },
+        {
+          "name": "disponible",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "boolean",
+          "error": {},
+          "GUID": "50f810f3-0fe5-4983-b624-3a02a33cc446"
+        },
+        {
+          "name": "descripcion",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "e723c93c-deb3-4fde-a569-09c0a46ac24c",
+          "error": {}
+        },
+        {
+          "name": "imagen",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "563eca05-6649-4aa4-820c-96b8d308a274",
+          "error": {}
+        }
+      ],
+      "definitions": {
+        "type": "definitions",
+        "properties": [],
+        "GUID": "5ac03649-642a-4227-981b-6280b1c00eae"
+      },
+      "isActivated": true,
+      "additionalProperties": false,
+      "validationLevel": "Off",
+      "validationAction": "Warn",
+      "storageEngineName": "WiredTiger",
+      "collectionUsers": [],
+      "indexes": [],
+      "collation": {},
+      "sharding": {
+        "unique": true,
+        "collation": "null"
+      },
+      "GUID": "ed66cc8e-b2dd-4d17-86df-6728b408d2d3",
+      "bucketId": "da97f547-85e9-48a7-8a38-7e0e50de8b7e"
+    }
+  ],
+  "buckets": [
+    {
+      "name": "Airbnb_Hotel",
+      "type": "bucket",
+      "collectionIds": [
+        "1bd41ad3-489c-48d9-a813-479c178b2966",
+        "ed66cc8e-b2dd-4d17-86df-6728b408d2d3"
+      ],
+      "backgroundColor": {
+        "r": 216,
+        "g": 0,
+        "b": 115,
+        "a": 1
+      },
+      "show": true,
+      "isActivated": true,
+      "GUID": "da97f547-85e9-48a7-8a38-7e0e50de8b7e"
+    }
+  ],
+  "views": [],
+  "relationships": [],
+  "users": [],
+  "diagramViews": [],
+  "idToNameHashTable": {
+    "da97f547-85e9-48a7-8a38-7e0e50de8b7e": "Airbnb_Hotel",
+    "1bd41ad3-489c-48d9-a813-479c178b2966": "Usuario",
+    "e253b708-b9ea-4d5b-bf4e-87f3f60eb5f0": "nombre",
+    "6ec9bb03-bbe5-456b-b051-dd4eb90231d3": "email",
+    "9b3cdc7e-a318-4995-89c3-bbdcd376ff76": "habitacion_interes",
+    "ed66cc8e-b2dd-4d17-86df-6728b408d2d3": "Habitacion",
+    "b1724170-ba8d-4047-9e63-4d75c389eede": "nombre",
+    "fa3e33f4-d1a5-466d-b653-bda7966d58ce": "tipo",
+    "c7d024f3-490a-4e3a-b9e2-51ae82a0d828": "precio",
+    "29cbaed5-0eb0-47bf-81cf-3bc77e1ddd7d": "telefono",
+    "00d20843-e15c-4fe3-876e-34d01f8efb5b": "mensaje",
+    "281983f8-0fb5-4293-b5ca-68db498722a7": "fechaRegistro",
+    "50f810f3-0fe5-4983-b624-3a02a33cc446": "disponible",
+    "e723c93c-deb3-4fde-a569-09c0a46ac24c": "descripcion",
+    "563eca05-6649-4aa4-820c-96b8d308a274": "imagen"
+  },
+  "definitions": {
+    "type": "definitions",
+    "properties": [],
+    "GUID": "ff1e994e-3f84-45d8-ac0b-0e09f838f1cf"
+  },
+  "polyglotDefinitions": {
+    "type": "polyglotDefinitions",
+    "properties": [],
+    "GUID": "1d960c86-2ae2-4c62-b8d6-7259d30db00e"
+  },
+  "externalDefinitions": {
+    "type": "externalDefinitions",
+    "properties": [],
+    "GUID": "f81d2582-348d-4d2e-8c72-8f59d9cd1581"
+  },
+  "sources": [],
+  "decorativeSymbols": [],
+  "dbVersion": "v7.x",
+  "dbVendor": "MongoDB",
+  "appTarget": "MONGODB",
+  "creationTS": "2025-04-25T16:21:46.025Z",
+  "GUID": "e3994e4a-19b5-4862-b6ec-db06553e5c8b",
+  "isLineageEnabled": false,
+  "lastModifTS": "2025-04-25T17:50:03.883Z",
+  "persistenceSchemaVersion": "8",
+  "isCreatedByPlugin": true,
+  "pluginInformation": {
+    "pluginEngineVersion": "1.0.0"
+  },
+  "applicationInformation": {
+    "version": "8.1.3"
+  },
+  "settings": {
+    "centralPane": {
+      "dbLevel": {
+        "erd": [
+          {
+            "GUID": "1bd41ad3-489c-48d9-a813-479c178b2966",
+            "x": 1434,
+            "y": 1107,
+            "width": 256,
+            "height": 139,
+            "color": {}
+          },
+          {
+            "GUID": "ed66cc8e-b2dd-4d17-86df-6728b408d2d3",
+            "x": 1104,
+            "y": 1105,
+            "width": 232,
+            "height": 146,
+            "color": {}
+          }
+        ],
+        "erdDefinitions": {
+          "erd": [],
+          "rootPath": [],
+          "entities": [],
+          "decorativeSymbols": []
+        },
+        "buckets": [
+          {
+            "x": 1064,
+            "y": 1065,
+            "GUID": "da97f547-85e9-48a7-8a38-7e0e50de8b7e"
+          }
+        ],
+        "collapsedNodes": [],
+        "activeRelationship": "",
+        "activeRelationshipFields": {
+          "childField": [],
+          "parentField": []
+        },
+        "selectedCollections": [],
+        "displayColorPicker": false,
+        "graphView": {
+          "erd": [],
+          "buckets": [],
+          "decorativeSymbols": [],
+          "forceLayout": true,
+          "defaultLinkLength": 300
+        },
+        "diagramViews": [],
+        "decorativeSymbols": [],
+        "nestedCollectionsLayout": "horizontal",
+        "options": [
+          {
+            "autoWidth": false,
+            "autoHeight": false,
+            "GUID": "1bd41ad3-489c-48d9-a813-479c178b2966"
+          },
+          {
+            "autoWidth": false,
+            "autoHeight": false,
+            "GUID": "ed66cc8e-b2dd-4d17-86df-6728b408d2d3"
+          }
+        ],
+        "relationshipUpdateDisabled": false
+      },
+      "collectionLevel": {},
+      "changed": false
+    },
+    "dtDiagram": {
+      "collapsedNodes": [],
+      "shouldDistributeCollections": false
+    }
+  }
+}

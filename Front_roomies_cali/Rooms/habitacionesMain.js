@@ -14,6 +14,8 @@ async function getRoomData() {
   try {
     const res = await fetch("http://localhost:3005/api/habitaciones"); // Asegúrate que usas /api si lo montaste así
     const habitaciones = await res.json();
+    console.log(habitaciones);
+    console.log(habitaciones.imageUrl);
     return habitaciones;
   } catch (error) {
     console.error("Error al obtener habitaciones:", error.message);
@@ -34,12 +36,17 @@ async function searchRoomByName(nombre) {
 function displayRooms(habitaciones) {
   roomList.innerHTML = "";
   habitaciones.forEach(habitacion => {
+   
     const roomCard = document.createElement("div");
     roomCard.classList.add("room-card");
 
+    const imageUrlToDisplay = habitacion.imageUrl || 'http://localhost:3005/uploads/reparacion.jpg'; // Usa imagen por defecto si imageUrl es null o vacío
+        const roomNumberForAlt = habitacion.numero || 'No Disponible'; // Usa el número para el texto alternativo
+
+
     roomCard.innerHTML = `
-      <img src="http://localhost:3005/uploads/${habitacion.imagen}" alt="${habitacion.nombre}" />
-      <h3>${habitacion.nombre}</h3>
+      <img src="${imageUrlToDisplay }" alt="${roomNumberForAlt}" />
+      <h3>${habitacion.numero}</h3>
       <p>Tipo: ${habitacion.tipo}</p>
       <p>Precio: $${habitacion.precio}</p>
     `;
@@ -57,8 +64,8 @@ function showRoomDetail(habitacion) {
   roomSearch1.style.display = "none";
 
   roomInfo.innerHTML = `
-    <h2>${habitacion.nombre}</h2>
-    <img src="http://localhost:3005/uploads/${habitacion.imagen}" alt="${habitacion.nombre}" />
+    <h2>${habitacion.numero}</h2>
+    <img src="${habitacion.imageUrl}" alt="${habitacion.nombre}" />
     <p><strong>Tipo:</strong> ${habitacion.tipo}</p>
     <p><strong>Precio:</strong> $${habitacion.precio}</p>
     <p><strong>Descripción:</strong> ${habitacion.descripcion}</p>
@@ -98,6 +105,8 @@ async function loadRoom() {
     displayRooms(habitaciones);
   }
 }
+
+
 
 // 🔙 Botón volver del detalle
 btnBack.addEventListener("click", () => {

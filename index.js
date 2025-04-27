@@ -1,9 +1,10 @@
 import express from "express"; // Importa la librería Express para crear y gestionar el servidor y las rutas
 import dotenv from"dotenv"; // Importa la librería dotenv para cargar variables de entorno desde un archivo .env
 import mongoose from "mongoose"; // Importa la librería Mongoose para interactuar con la base de datos MongoDB
+import cors from 'cors';
 import airbnbRoutes from "./back_end/routes/airbnb.routes.js";
 import multer from "multer";
-import cors from 'cors';
+
 
 /* PROYECTO FINAL */
 
@@ -11,12 +12,18 @@ dotenv.config(); // Carga las variables de entorno desde el archivo .env
 const app=express(); // Crea una instancia de la aplicación Express
 const PORT =(process.env.PORT|| 3000); // Define el puerto del servidor, utilizando la variable de entorno PORT o 3000 como valor por defecto
 
-
 app.set("port",PORT); // Establece el puerto que la aplicación Express utilizará
-app.use(express.json()); // Habilita el middleware para analizar cuerpos de solicitud JSON
-app.use("/api",airbnbRoutes); // Monta las rutas relacionadas con airbnb bajo el prefijo "/api/habitacion"
-app.use('/uploads', express.static('./back_end/uploads'));// para servir la carpeta uploads de forma pública
+// --- 1. Middlewares de Seguridad (CORS va primero)
 app.use(cors()); // Habilita CORS para todas las rutas y todos los orígenes
+// --- 2. Middlewares para parsear el Cuerpo de la Petición ---
+app.use(express.json()); // Habilita el middleware para analizar cuerpos de solicitud JSON
+// --- 3. Middlewares para Servir Archivos Estáticos ---
+// El general para el frontend (sin prefijo) va primero
+app.use(express.static('./Front_roomies_cali'));
+// Luego los específicos como /uploads
+app.use('/uploads', express.static('./back_end/uploads'));// para servir la carpeta uploads de forma pública
+// --- 4. Middlewares o Routers para tus RUTAS API ---
+app.use("/api",airbnbRoutes); // Monta las rutas relacionadas con airbnb bajo el prefijo "/api/habitacion"
 
 
 // Ruta de ejemplo para la raíz del servidor

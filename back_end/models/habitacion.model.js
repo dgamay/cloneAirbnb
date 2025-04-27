@@ -8,22 +8,11 @@ const habitacionSchema = new Schema ({
         require: true,
         unique: true,
     },
-
-    capacidad: {
-        type:Number,
-        enum:[1, 2, 4],
-        require: true,
-    },
-
-    baño:{
+    
+    tipo:{
         type:String,
-        enum: ['privado','compartido'],
+        enum: ['Deluxe','compartida'],
         require: true,
-    },
-    servicios:{
-        type    :String,
-        enum    :['desayuno', 'internet','tv','lavanderia','ninguno'],
-        require :true,
     },
 
     precio :{
@@ -31,8 +20,8 @@ const habitacionSchema = new Schema ({
         require : true,
     },
     
-    fotos :{
-        type : [{ type: String }], // Arreglo dinámico para agregar las imagenes de las habitaciones
+    imageUrl :{
+        type    : String, // Arreglo dinámico para agregar las imagenes de las habitaciones
         require : true
     }
 

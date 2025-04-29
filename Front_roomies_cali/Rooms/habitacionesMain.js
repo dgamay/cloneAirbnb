@@ -14,23 +14,35 @@ async function getRoomData() {
   try {
     const res = await fetch("http://localhost:3005/api/habitaciones"); // Asegúrate que usas /api si lo montaste así
     const habitaciones = await res.json();
-    console.log(habitaciones);
-    console.log(habitaciones.imageUrl);
     return habitaciones;
   } catch (error) {
     console.error("Error al obtener habitaciones:", error.message);
   }
 }
 
-// 🔍 Buscar habitación por nombre
-async function searchRoomByName(nombre) {
-  try {
+// 🔍 Buscar habitación por numero
+async function searchRoomByName(numero) {
+ /*  try {
     const habitaciones = await getRoomData();
-    return habitaciones.find(room => room.nombre.toLowerCase() === nombre.toLowerCase());
+    return habitaciones.find(room => room.numero.toLowerCase() === numero.toLowerCase());
   } catch (error) {
     console.error("Error al buscar habitación:", error.message);
+  } */
+
+  try {
+    const habitaciones = await getRoomData();
+    if (!texto) {
+      return habitaciones.slice(0, 10); // O devuelve un conjunto inicial limitado
+    }
+    const textoEnMinusculas = texto.toLowerCase();
+    return habitaciones.filter(room =>
+      room.numero.toLowerCase().includes(textoEnMinusculas)
+    );
+  } catch (error) {
+    console.error("Error al buscar habitaciones:", error.message);
+    return []; // Devuelve un array vacío en caso de error
   }
-}
+};
 
 // 🖼️ Mostrar todas las habitaciones
 function displayRooms(habitaciones) {

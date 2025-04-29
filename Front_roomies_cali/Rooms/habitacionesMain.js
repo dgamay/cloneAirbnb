@@ -22,14 +22,14 @@ async function getRoomData() {
 
 // 🔍 Buscar habitación por numero
 async function searchRoomByName(numero) {
- /*  try {
+  try {
     const habitaciones = await getRoomData();
     return habitaciones.find(room => room.numero.toLowerCase() === numero.toLowerCase());
   } catch (error) {
     console.error("Error al buscar habitación:", error.message);
-  } */
+  }
 
-  try {
+  /* try {
     const habitaciones = await getRoomData();
     if (!texto) {
       return habitaciones.slice(0, 10); // O devuelve un conjunto inicial limitado
@@ -41,7 +41,7 @@ async function searchRoomByName(numero) {
   } catch (error) {
     console.error("Error al buscar habitaciones:", error.message);
     return []; // Devuelve un array vacío en caso de error
-  }
+  } */
 };
 
 // 🖼️ Mostrar todas las habitaciones
